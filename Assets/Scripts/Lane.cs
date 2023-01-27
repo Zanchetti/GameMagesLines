@@ -9,6 +9,14 @@ public class Lane : MonoBehaviour
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public KeyCode input;
     public GameObject effect;
+
+    public TMPro.TextMeshPro redTextInput;
+    public TMPro.TextMeshPro blueTextInput;
+
+    public GameObject normalEffect,
+        goodEffect,
+        perfectEffect,
+        missEffect;
     public GameObject notePrefab;
     public Animator animator;
     List<Note> notes = new List<Note>();
@@ -17,8 +25,22 @@ public class Lane : MonoBehaviour
     int spawnIndex = 0;
     int inputIndex = 0;
 
+    public int decididor;
+
     // Start is called before the first frame update
-    void Start() { }
+    void Start()
+    {
+        if (decididor == 1)
+        {
+            input = RebidingKeyBlue.inputBlue;
+            blueTextInput.text = input.ToString();
+        }
+        if (decididor == 2)
+        {
+            input = RebidingKeyRed.inputRed;
+            redTextInput.text = input.ToString();
+        }
+    }
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
     {
@@ -66,43 +88,84 @@ public class Lane : MonoBehaviour
 
             if (Input.GetKeyDown(input))
             {
-                if (Math.Abs(audioTime - timeStamp) < marginOfError)
+                if (PauseMenu.gameIsPaused == false)
                 {
-                    Hit();
-                    print($"Hit on {inputIndex} note");
-                    Instantiate(effect);
-                    Destroy(notes[inputIndex].gameObject);
-                    inputIndex++;
+                    if (Math.Abs(audioTime - timeStamp) < marginOfError)
+                    {
+                        if (
+                            marginOfError - Math.Abs(audioTime - timeStamp) > 0
+                            && marginOfError - Math.Abs(audioTime - timeStamp) < 0.02
+                        )
+                        {
+                            ScoreManager.NormalHit();
+                            Instantiate(normalEffect);
+                        }
+                        if (
+                            marginOfError - Math.Abs(audioTime - timeStamp) > 0.1
+                            && marginOfError - Math.Abs(audioTime - timeStamp) < 0.12
+                        )
+                        {
+                            ScoreManager.NormalHit();
+                            Instantiate(normalEffect);
+                        }
+                        if (
+                            marginOfError - Math.Abs(audioTime - timeStamp) > 0.02
+                            && marginOfError - Math.Abs(audioTime - timeStamp) < 0.04
+                        )
+                        {
+                            ScoreManager.GoodHit();
+                            Instantiate(goodEffect);
+                        }
+                        if (
+                            marginOfError - Math.Abs(audioTime - timeStamp) > 0.08
+                            && marginOfError - Math.Abs(audioTime - timeStamp) < 0.1
+                        )
+                        {
+                            ScoreManager.GoodHit();
+                            Instantiate(goodEffect);
+                        }
+                        if (
+                            marginOfError - Math.Abs(audioTime - timeStamp) > 0.04
+                            && marginOfError - Math.Abs(audioTime - timeStamp) < 0.08
+                        )
+                        {
+                            ScoreManager.PerfectHit();
+                            Instantiate(perfectEffect);
+                        }
+                        //Hit();
+                        print($"Hit on {inputIndex} note");
+                        Instantiate(effect);
+                        Destroy(notes[inputIndex].gameObject);
+                        inputIndex++;
+                    }
                 }
-                else
-                {
-                    print(
-                        $"Hit inaccurate on {inputIndex} note with {Math.Abs(audioTime - timeStamp)} delay"
-                    );
-                }
-            }
-//AQUI EM BAIXO PRECISA MUDAR POR CAUS DO TEMPO DE ANIMAÇÃO se pá usar o getbutton ao inves do getkey
-            if (Input.GetKey(KeyCode.Z))
-            {
-                animator.SetBool("batendoEmCima", true);
-            }
-            if (Input.GetKeyUp(KeyCode.Z))
-            {
-                animator.SetBool("batendoEmCima", false);
             }
 
-            if (Input.GetKey(KeyCode.X))
+            if (PauseMenu.gameIsPaused == false)
             {
-                animator.SetBool("batendoEmBaixo", true);
-            }
-            if (Input.GetKeyUp(KeyCode.X))
-            {
-                animator.SetBool("batendoEmBaixo", false);
+                if (Input.GetKey(RebidingKeyRed.inputRed))
+                {
+                    animator.SetBool("batendoEmCima", true);
+                }
+                if (Input.GetKeyUp(RebidingKeyRed.inputRed))
+                {
+                    animator.SetBool("batendoEmCima", false);
+                }
+
+                if (Input.GetKey(RebidingKeyBlue.inputBlue))
+                {
+                    animator.SetBool("batendoEmBaixo", true);
+                }
+                if (Input.GetKeyUp(RebidingKeyBlue.inputBlue))
+                {
+                    animator.SetBool("batendoEmBaixo", false);
+                }
             }
 
             if (timeStamp + marginOfError <= audioTime)
             {
                 Miss();
+                Instantiate(missEffect);
                 print($"Missed {inputIndex} note");
                 inputIndex++;
             }

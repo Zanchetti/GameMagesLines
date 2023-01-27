@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Rotation">
+    <Position X="10.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAEAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Assets\Scripts\Rotation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RebidingKeyRed">
+    <Position X="14" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAABCAAAAIIAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RebidingKeyRed.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="RebidingKeyBlue">
+    <Position X="12.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAgAAAAAAAAAAAABCAAAAIAAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\RebidingKeyBlue.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Note">
+    <Position X="12.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAACAAAAAAIAAAAA=</HashCode>
+      <FileName>Assets\Scripts\Note.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EffectDestroy">
+    <Position X="14" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Assets\Scripts\EffectDestroy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MenuClick">
+    <Position X="10.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>Assets\Scripts\MenuScripts\MenuClick.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

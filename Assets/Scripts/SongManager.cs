@@ -22,20 +22,16 @@ public class SongManager : MonoBehaviour
 
     public float noteDespawnX
     {
-        get
-        {
-            return noteTapX - (noteSpawnX - noteTapX);
-        }
+        get { return noteTapX - (noteSpawnX - noteTapX); }
     }
 
     public static MidiFile midiFile;
-
 
     // Start is called before the first frame update
     void Start()
     {
         Instance = this;
-            ReadFromFile();
+        ReadFromFile();
     }
 
     private void ReadFromFile()
@@ -50,7 +46,8 @@ public class SongManager : MonoBehaviour
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
-        foreach (var lane in lanes) lane.SetTimeStamps(array);
+        foreach (var lane in lanes)
+            lane.SetTimeStamps(array);
 
         Invoke(nameof(StartSong), songDalayInSeconds);
     }
@@ -60,14 +57,23 @@ public class SongManager : MonoBehaviour
         audioSource.Play();
     }
 
+    public static bool isPlaying()
+    {
+        if (Instance.audioSource.isActiveAndEnabled)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
     public static double GetAudioSourceTime()
     {
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    void Update() { }
 }
