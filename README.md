@@ -9,4 +9,4 @@ The following project has as its objective
   * Develop the game with Unity's game engine using the C# language to create the scripts.
 
 <h3>Menu<h3>
-![My Remote Image]([https://www.dropbox.com/s/.../my-remote-image.jpg?dl=0](https://cdn.discordapp.com/attachments/1003778093942571171/1069265149447393291/image.png))
+![My Remote Image](https://cdn.discordapp.com/attachments/1003778093942571171/1069265149447393291/image.png)
