@@ -9,4 +9,4 @@ The following project has as its objective
   * Develop the game with Unity's game engine using the C# language to create the scripts.
 
 <h3>Menu<h3>
-![My Remote Image](https://cdn.discordapp.com/attachments/1003778093942571171/1069265149447393291/image.png)
+![magesLineMenu](https://user-images.githubusercontent.com/102626907/215334328-994601c0-8077-466f-b060-3af50bf6302b.png)
