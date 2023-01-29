@@ -9,4 +9,4 @@ The following project has as its objective
   * Develop the game with Unity's game engine using the C# language to create the scripts.
 
 <h3>Menu<h3>
-![magesLineMenu](https://user-images.githubusercontent.com/102626907/215334328-994601c0-8077-466f-b060-3af50bf6302b.png)
+![ImageOfMagesLineMenu](magesLineMenu.png)
