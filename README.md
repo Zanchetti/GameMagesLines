@@ -1,4 +1,4 @@
-# Game Warrior Lines
+# Game Mage's Line
 
 <p>With the emergence of several new genres, rhythm games emerged, characterized by a combination of coordination between the rhythm and beat of songs added to the user's skill. Considering that several motor skills are needed to be able to play within the game, it could be used to improve these skills. Learning based on electronic games shows that it is possible to combine the recreation that is present within electronic games with a teaching proposal that is relaxed and conducive to the reality of its users.<p>
   
