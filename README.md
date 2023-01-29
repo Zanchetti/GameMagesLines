@@ -7,3 +7,6 @@ The following project has as its objective
   * Search the development about rhythm games
   * Analyze similar games with the final proposal, in order to facilitate the survey of functional and non-functional requirements and business rules.
   * Develop the game with Unity's game engine using the C# language to create the scripts.
+
+<h3>Menu<h3>
+![image of the game menu](https://cdn.discordapp.com/attachments/1003778093942571171/1069265149447393291/image.png)
